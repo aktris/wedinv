@@ -1,6 +1,16 @@
 // --- URL GOOGLE SCRIPT ---
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwJnx4osfo-n8K1e6qeVmZhkAucHYF18J1FNpmswJOij6-U_sLATx741StzCk892iEsyw/exec';
+// ==============================
+// AMBIL NAMA TAMU DARI URL (?to=nama)
+// ==============================
+const urlParams = new URLSearchParams(window.location.search);
+const namaTamu = urlParams.get('to');
+const elemenNamaTamu = document.getElementById('nama-tamu-teks');
 
+if (namaTamu && elemenNamaTamu) {
+    // Mengganti teks default dengan nama dari link URL
+    elemenNamaTamu.innerText = namaTamu;
+}
 // ==============================
 // AOS INIT
 // ==============================
