@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding of Anjeli & Rafi</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234A3525'/><text y='65' x='50' text-anchor='middle' font-size='40' font-family='serif' font-weight='bold' fill='%23FDFBF7'>A<tspan fill='%23B88E5E'>&amp;</tspan>R</text></svg>">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="kunci-scroll">
+
+    <audio id="musik-latar" loop preload="auto">
+        <source src="backsound.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="layout-utama">
+        
+        <div class="panel-kiri">
+            <img src="cover-galeri.jpg" alt="Foto Prewed" class="bg-kiri">
+            <div class="overlay-kiri"></div>
+            <div class="konten-kiri">
+                <p class="teks-kecil-kiri">Undangan Pernikahan</p>
+                <h1 class="nama-besar-kiri">ANJELI <span class="font-latin teks-emas">&</span> RAFI</h1>
+                <p class="tanggal-kiri">01 JUNI 2026</p>
+            </div>
+        </div>
+
+        <div class="panel-kanan">
+            
+            <div id="layar-pembuka">
+                <img src="galeri2.jpg" alt="Cover" class="bg-cover">
+                <div class="overlay-cover"></div>
+                <div class="konten-cover">
+                    <p class="teks-the-wedding">The Wedding of</p>
+                    <h1 class="nama-cover">Anjeli <span class="font-latin teks-emas">&</span> Rafi</h1>
+                    
+                    <div class="info-tamu">
+                        <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                        <h2 id="nama-tamu-teks" class="nama-tamu">Tamu Undangan</h2>
+                    </div>
+                    <button id="tombol-buka" class="btn-modern">Buka Undangan</button>
+                </div>
+            </div>
+
+            <main id="isi-undangan" class="sembunyi">
+                
+                <header class="navbar">
+                    <div class="logo-container">
+                        <a href="#" class="logo-text">A<span>&</span>R</a>
+                    </div>
+                </header>
+
+                <section class="section-full">
+                    <img src="galeri3.jpg" class="bg-section" alt="Prewed">
+                    <div class="overlay-gradien-bawah"></div>
+                    <div class="konten-bawah" data-aos="fade-up">
+                        <h2 class="font-latin" style="font-size: 2.4rem; margin-bottom: 15px; line-height: 1.3;">all because two people<br>fell in love...</h2>
+                        <p class="font-serif">The Wedding of<br><span style="font-size: 1.8rem;">Anjeli <span class="font-latin teks-emas">&</span> Rafi</span></p>
+                    </div>
+                </section>
+
+                <section class="section-teks bg-gelap">
+                    <div class="container" data-aos="fade-up">
+                        <h3 class="font-latin" style="font-size: 2.5rem; margin-bottom: 20px;">and so it begins...</h3>
+                        <p class="teks-quote">"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang..."</p>
+                        <p class="teks-sumber">Q.S. Ar-Rum 21</p>
+                    </div>
+                </section>
+
+                <section class="section-full">
+                    <img src="foto-anjeli.jpg" class="bg-section" alt="Anjeli">
+                    <div class="overlay-gradien-bawah"></div>
+                    <div class="konten-bawah kiri" data-aos="fade-right">
+                        <p class="font-latin teks-emas" style="font-size: 2.2rem;">the bride</p>
+                        <h2 class="nama-profil">Anjeli Mutiara Putri,<br>S.Tr.Keb.</h2>
+                        <p class="teks-ortu">Putri dari<br>Bapak Rinenggo Wahyu Jatmiko<br>& Ibu Ratna Mutumanikam</p>
+                    </div>
+                </section>
+
+                <section class="section-full">
+                    <img src="foto-rafi.jpg" class="bg-section" alt="Rafi">
+                    <div class="overlay-gradien-bawah"></div>
+                    <div class="konten-bawah kanan" data-aos="fade-left" style="text-align: right;">
+                        <p class="font-latin teks-emas" style="font-size: 2.2rem;">the groom</p>
+                        <h2 class="nama-profil">Rafi Rahman Dika,<br>A.Md.Kep.</h2>
+                        <p class="teks-ortu">Putra dari<br>Bapak Sudarman<br>& Ibu Hariyanti</p>
+                    </div>
+                </section>
+
+                <section class="section-teks bg-abu">
+                    <div class="container" data-aos="fade-up">
+                        <h2 class="font-serif ukuran-besar mb-4">Kisah Cinta</h2>
+                        <div class="garis-waktu">
+                            
+                            <div class="item-waktu" data-aos="fade-up">
+                                <div class="titik-waktu"></div>
+                                <h3 class="font-serif">Awal Bertemu</h3>
+                                <p class="isi-waktu" style="margin-top: 10px;">Sebelumnya kami adalah teman satu SMA dan kelas kami bersebelahan namun kami tidak pernah saling berkomunikasi hanya saling tahu nama satu sama lain, katanya Rafi sejak SMA sudah ada rasa ketertarikan dengan Anjeli tapi tidak berani mendekati…<br><br>Seiring berjalannya waktu hingga kami selesai kuliah di Universitas yang sama yaitu Poltekkes Palangka Raya dengan jurusan Kebidanan dan Keperawatan kami masih tidak pernah saling berkomunikasi dan tiba satu waktu kami dipertemukan disalah satu Caffe karena teman-teman kami saling mengenal, di saat itulah kami berdua pun mulai saling berkomunikasi.</p>
+                            </div>
+                            
+                            <div class="item-waktu" data-aos="fade-up" data-aos-delay="100">
+                                <div class="titik-waktu"></div>
+                                <h3 class="font-serif">Merajut Kasih</h3>
+                                <span class="tanggal-waktu">2023</span>
+                                <p class="isi-waktu">Waktu yang berlalu setelah lebih sering bertemu perlahan menumbuhkan rasa nyaman diantara kami… Hingga disuatu waktu Rafi mengungkapkan perasaannya dengan Anjeli dan kami memutuskan untuk menjalani hubungan ini dengan penuh cinta, menjalaninya bersama dalam suka maupun duka, banyak sekali rintangan cobaan yang telah kami hadapi namun kami tetap saling menguatkan dan memberikan cinta kasih yang tulus ini satu sama lain.</p>
+                            </div>
+
+                            <div class="item-waktu" data-aos="fade-up" data-aos-delay="200">
+                                <div class="titik-waktu"></div>
+                                <h3 class="font-serif">Mengikat Janji</h3>
+                                <span class="tanggal-waktu">2026</span>
+                                <p class="isi-waktu">Berkat doa dan restu orang tua dan keluarga kami, serta niat kami yang tulus untuk saling mencintai, Allah memudahkan jalan kami hingga sampai dititik kami bisa bersanding dipelaminan… Di hari raya idul fitri kedua tidak disangka hari itu menjadi hari dua keluarga saling berdiskusi untuk menetapkan waktu pernikahan kami dengan semua keluarga besar yang berkumpul.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-teks bg-gelap">
+                    <div class="container" data-aos="fade-up">
+                        <p class="font-lato" style="letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 10px;">S A V E &nbsp; T H E &nbsp; D A T E</p>
+                        <h2 class="font-serif ukuran-besar">01 <span class="font-latin teks-emas" style="font-size: 3rem;">Juni</span> 26</h2>
+                        
+                        <div class="grid-countdown mt-4">
+                            <div><span id="hari">00</span><p>Hari</p></div>
+                            <div><span id="jam">00</span><p>Jam</p></div>
+                            <div><span id="menit">00</span><p>Menit</p></div>
+                            <div><span id="detik">00</span><p>Detik</p></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-teks bg-abu-terang">
+                    <div class="container" data-aos="fade-up">
+                        <div class="kotak-acara-modern">
+                            <h2 class="font-serif mb-2" style="font-size: 1.8rem; line-height: 1.2;">
+                                Akad Nikah<br>
+                                <span class="font-lato" style="font-size: 0.95rem; display: block; margin: 5px 0; font-weight: normal; color: var(--teks-abu); letter-spacing: 0;">Sabtu, 01 Juni 2026, 08:00 WIB</span>
+                                <span class="font-latin teks-emas" style="font-size: 2.8rem; display: inline-block; margin: 5px 0;">&</span><br>
+                                Resepsi<br>
+                                <span class="font-lato" style="font-size: 0.95rem; display: block; margin-top: 5px; font-weight: normal; color: var(--teks-abu); letter-spacing: 0;">Sabtu, 01 Juni 2026, 11.00 WIB</span>
+                            </h2>
+                            
+                            <p class="font-serif mt-4" style="font-size: 1.2rem;">Dandang Tingang Hotel</p>
+                            <p class="font-lato mt-2" style="font-size: 0.85rem; opacity: 0.8; line-height: 1.5;">Jl. Yos Sudarso No.13, Kec. Pahandut, Kota Palangka Raya, Kalimantan Tengah 73111</p>
+                            <a href="https://maps.app.goo.gl/SbsJpMLSv1fCWMWV7" target="_blank" class="btn-kotak">BUKA DI GOOGLE MAPS</a>
+                        </div>
+                        
+                        <div class="mt-4 map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.8477044543365!2d113.90992242020684!3d-2.2111146892561404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dfcb30065dc7045%3A0xaa70ce5635ed8987!2sDandang%20Tingang%20Hotel!5e0!3m2!1sid!2sid!4v1779589151498!5m2!1sid!2sid" width="100%" height="350" style="border:0; display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-teks bg-gelap">
+                    <div class="container" data-aos="fade-up">
+                        <h2 class="font-serif ukuran-besar mb-4">Galeri</h2>
+                        <div class="susunan-galeri">
+                            <div class="item-foto" data-aos="zoom-in"><img src="galeri1.jpg" alt="Galeri 1"></div>
+                            <div class="item-foto" data-aos="zoom-in" data-aos-delay="100"><img src="galeri2.jpg" alt="Galeri 2"></div>
+                            <div class="item-foto" data-aos="zoom-in" data-aos-delay="200"><img src="galeri3.jpg" alt="Galeri 3"></div>
+                            <div class="item-foto" data-aos="zoom-in" data-aos-delay="300"><img src="galeri4.jpg" alt="Galeri 4"></div>
+                            <div class="item-foto" data-aos="zoom-in" data-aos-delay="400"><img src="galeri5.jpg" alt="Galeri 5"></div>
+                            <div class="item-foto" data-aos="zoom-in" data-aos-delay="500"><img src="galeri6.jpg" alt="Galeri 6"></div>
+                            <div class="item-foto" data-aos="zoom-in" data-aos-delay="600"><img src="galeri7.jpg" alt="Galeri 7"></div>
+                            <div class="item-foto" data-aos="zoom-in" data-aos-delay="700"><img src="galeri8.jpg" alt="Galeri 8"></div>
+                            <div class="item-foto" data-aos="zoom-in" data-aos-delay="800"><img src="galeri9.jpg" alt="Galeri 9"></div>
+                            <div class="item-foto" data-aos="zoom-in" data-aos-delay="900"><img src="galeri10.jpg" alt="Galeri 10"></div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-teks bg-abu">
+                    <div class="container" style="text-align: left;" data-aos="fade-up">
+                        <h2 class="font-serif ukuran-besar mb-2">RSVP</h2>
+                        <p class="font-lato mb-4" style="font-size: 0.9rem; opacity: 0.8;">Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i berkenan hadir.</p>
+                        
+                        <form name="submit-ke-google-sheet" class="form-modern">
+                            <div class="grup-input">
+                                <label>Nama Lengkap</label>
+                                <input type="text" name="nama" required placeholder="Ketik nama Anda...">
+                            </div>
+                            <div class="grup-input">
+                                <label>Konfirmasi Kehadiran</label>
+                                <select name="kehadiran" required>
+                                    <option value="" disabled selected>Pilih...</option>
+                                    <option value="Hadir">Sanggup Hadir</option>
+                                    <option value="Tidak Hadir">Maaf, Tidak Bisa Hadir</option>
+                                </select>
+                            </div>
+                            <button type="submit" id="tombol-kirim" class="btn-kotak w-100">KIRIM KONFIRMASI</button>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="section-teks bg-gelap">
+                    <div class="container" data-aos="fade-up">
+                        <h2 class="font-serif ukuran-besar mb-2">Wedding Gift</h2>
+                        <p class="font-lato mb-4" style="font-size: 0.9rem; opacity: 0.8;">Doa restu Anda merupakan karunia yang sangat berarti. Jika Anda ingin memberikan tanda kasih, silakan gunakan fitur di bawah ini.</p>
+
+                        <div class="kotak-bank">
+                            <h3 class="font-lato">BANK BSI</h3>
+                            <p class="nomor-rek">7294260425</p>
+                            <p class="nama-rek">ANJELI MUTIARA PUTRI</p>
+                            <button onclick="salinTeks('7294260425', this)" class="btn-salin">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="kotak-bank">
+                            <h3 class="font-lato">BANK BCA</h3>
+                            <p class="nomor-rek">8600959833</p>
+                            <p class="nama-rek">RAFI RAHMAN DIKA</p>
+                            <button onclick="salinTeks('8600959833', this)" class="btn-salin">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-teks bg-abu-terang" style="padding-bottom: 100px;">
+                    <div class="container" data-aos="fade-up">
+                        <p class="font-lato" style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 30px;">Menjadi sebuah kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.<br><br>Terima kasih atas segala doa dan restu.</p>
+                        <h2 class="font-latin" style="font-size: 3.5rem;">Anjeli <span class="font-latin teks-emas">&</span> Rafi</h2>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
