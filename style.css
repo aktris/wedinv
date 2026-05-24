@@ -72,7 +72,9 @@ body {
 /* COVER PEMBUKA */
 #layar-pembuka {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    z-index: 999; overflow: hidden; display: flex; align-items: center; justify-content: center;
+    z-index: 999; overflow: hidden; display: flex; 
+    align-items: flex-start; /* Ubah dari center jadi flex-start di sini */
+    justify-content: center;
     text-align: center;
 }
 .bg-cover { 
@@ -82,9 +84,19 @@ body {
     filter: brightness(45%) saturate(80%); 
 }
 .overlay-cover { position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.4); }
-.konten-cover { position: relative; z-index: 5; width: 98%; }
+.konten-cover { 
+    position: relative; 
+    z-index: 5; 
+    width: 98%; 
+    padding-top: 5vh; /* Tambahin ini buat ngunci posisi teks The Wedding dkk dari atas */
+}
 .teks-the-wedding { font-family: 'Lato', sans-serif; font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 1px; }
-.nama-cover { font-family: 'Playfair Display', serif; font-size: 2.7rem; font-style: italic; margin-bottom: 60vh; }
+.nama-cover { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 2.7rem; 
+    font-style: italic; 
+    margin-bottom: 55vh; /* Sekarang margin ini murni cuma dorong yang bawah turun tanpa naikin yang atas. Lu bisa gede/kecilin angkanya sesuai selera. */
+}
 .info-tamu p { font-size: 0.8rem; margin-bottom: 5px; opacity: 0.8; }
 .nama-tamu { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 25px; }
 
