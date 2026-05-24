@@ -150,7 +150,7 @@ body {
 }
 .konten-bawah.kiri { text-align: left; }
 .konten-bawah.kanan { text-align: right; }
-.nama-profil { font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.2rem; margin: 10px 0; }
+.nama-profil { font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.2rem; margin: 7px 0; }
 .teks-ortu { font-size: 0.85rem; line-height: 1.6; opacity: 0.8; }
 
 /* BAGIAN TEKS */
