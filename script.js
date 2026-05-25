@@ -155,10 +155,15 @@ if (form && btnKirim) {
 
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
-                alert('Mantap! Konfirmasi kehadiran udah berhasil terkirim.');
+                // Pas sukses, langsung ubah teks jadi TERKIRIM
+                btnKirim.innerText = 'TERKIRIM';
                 form.reset();
-                btnKirim.innerText = 'KIRIM KONFIRMASI';
-                btnKirim.disabled = false;
+
+                // Tunggu 2 detik (2000 ms), baru balikin tombol ke semula
+                setTimeout(() => {
+                    btnKirim.innerText = 'KIRIM KONFIRMASI';
+                    btnKirim.disabled = false;
+                }, 2000);
             })
             .catch(error => {
                 console.error('Error!', error.message);
