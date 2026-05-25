@@ -154,4 +154,28 @@ function salinTeks(teks, tombol) {
         console.error('Gagal menyalin teks: ', err);
         alert('Gagal menyalin teks, silakan coba lagi!');
     });
+    
+    // ==============================
+    // KIRIM FORM KE GOOGLE SHEETS
+    // ==============================
+    const form = document.forms['submit-ke-google-sheet'];
+    const btnKirim = document.getElementById('tombol-kirim');
+    
+    form.addEventListener('submit', e => {
+        e.preventDefault(); // Biar halaman nggak ke-refresh otomatis
+        btnKirim.innerText = 'MENGIRIM...'; // Ubah teks tombol pas loading
+    
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                alert('Mantap! Konfirmasi kehadiran udah berhasil terkirim.');
+                form.reset(); // Kosongin isian form
+                btnKirim.innerText = 'KIRIM KONFIRMASI'; // Balikin teks tombol
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('Waduh, gagal ngirim nih. Coba cek koneksi dan ulangi ya!');
+                btnKirim.innerText = 'KIRIM KONFIRMASI';
+            });
+    });
+    
 }
