@@ -1,5 +1,5 @@
 // --- URL GOOGLE SCRIPT (Ganti dengan URL Web App dari akun baru kamu) ---
-const scriptURL = 'https://docs.google.com/spreadsheets/d/1yMtxMXHt_DLJPJdoXHRmpc1RNKz9HrZJjd3MBiJBz2Q/edit?usp=sharing';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwJnx4osfo-n8K1e6qeVmZhkAucHYF18J1FNpmswJOij6-U_sLATx741StzCk892iEsyw/exec';
 
 // ==============================
 // AOS INIT
