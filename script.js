@@ -1,16 +1,6 @@
-// --- URL GOOGLE SCRIPT ---
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwJnx4osfo-n8K1e6qeVmZhkAucHYF18J1FNpmswJOij6-U_sLATx741StzCk892iEsyw/exec';
-// ==============================
-// AMBIL NAMA TAMU DARI URL (?to=nama)
-// ==============================
-const urlParams = new URLSearchParams(window.location.search);
-const namaTamu = urlParams.get('to');
-const elemenNamaTamu = document.getElementById('nama-tamu-teks');
+// --- URL GOOGLE SCRIPT (Ganti dengan URL Web App dari akun baru kamu) ---
+const scriptURL = 'https://docs.google.com/spreadsheets/d/1yMtxMXHt_DLJPJdoXHRmpc1RNKz9HrZJjd3MBiJBz2Q/edit?usp=sharing';
 
-if (namaTamu && elemenNamaTamu) {
-    // Mengganti teks default dengan nama dari link URL
-    elemenNamaTamu.innerText = namaTamu;
-}
 // ==============================
 // AOS INIT
 // ==============================
@@ -140,13 +130,8 @@ window.addEventListener('load', () => {
 // ==============================
 function salinTeks(teks, tombol) {
     navigator.clipboard.writeText(teks).then(() => {
-        // Simpan icon asli
         let iconAsli = tombol.innerHTML;
-        
-        // Ubah jadi icon ceklis dengan ukuran 16x16 biar tombol gak berubah ukurannya
         tombol.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/></svg>`;
-        
-        // Kembalikan ke icon asli setelah 2 detik
         setTimeout(() => {
             tombol.innerHTML = iconAsli;
         }, 2000);
@@ -154,28 +139,32 @@ function salinTeks(teks, tombol) {
         console.error('Gagal menyalin teks: ', err);
         alert('Gagal menyalin teks, silakan coba lagi!');
     });
-    
-    // ==============================
-    // KIRIM FORM KE GOOGLE SHEETS
-    // ==============================
-    const form = document.forms['submit-ke-google-sheet'];
-    const btnKirim = document.getElementById('tombol-kirim');
-    
+}
+
+// ==============================
+// LOGIKA PENGIRIMAN RSVP (NEW)
+// ==============================
+const form = document.forms['submit-ke-google-sheet'];
+const btnKirim = document.getElementById('tombol-kirim');
+
+if (form && btnKirim) {
     form.addEventListener('submit', e => {
-        e.preventDefault(); // Biar halaman nggak ke-refresh otomatis
-        btnKirim.innerText = 'MENGIRIM...'; // Ubah teks tombol pas loading
-    
+        e.preventDefault();
+        btnKirim.innerText = 'MENGIRIM...';
+        btnKirim.disabled = true;
+
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
                 alert('Mantap! Konfirmasi kehadiran udah berhasil terkirim.');
-                form.reset(); // Kosongin isian form
-                btnKirim.innerText = 'KIRIM KONFIRMASI'; // Balikin teks tombol
+                form.reset();
+                btnKirim.innerText = 'KIRIM KONFIRMASI';
+                btnKirim.disabled = false;
             })
             .catch(error => {
                 console.error('Error!', error.message);
-                alert('Waduh, gagal ngirim nih. Coba cek koneksi dan ulangi ya!');
+                alert('Waduh, gagal ngirim nih. Coba cek kembali deploy Web App kamu!');
                 btnKirim.innerText = 'KIRIM KONFIRMASI';
+                btnKirim.disabled = false;
             });
     });
-    
 }
