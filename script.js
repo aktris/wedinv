@@ -17,13 +17,13 @@ const isiUndangan = document.getElementById('isi-undangan');
 const musikLatar = document.getElementById('musik-latar');
 
 // ==============================
-// AMBIL NAMA TAMU DARI URL
+// AMBIL NAMA TAMU DARI URL (DI-UPDATE)
 // ==============================
 const urlParams = new URLSearchParams(window.location.search);
 const namaTamu = urlParams.get('to');
 
-// Pastiin ID 'nama-tamu' sesuai sama yang ada di tag HTML kamu
-const tempatNama = document.getElementById('nama-tamu');
+// ID disesuaikan menjadi 'nama-tamu-teks' agar cocok dengan HTML
+const tempatNama = document.getElementById('nama-tamu-teks');
 
 if (tempatNama) {
     // Kalau ?to= kosong, bakal nampilin 'Tamu Undangan'
@@ -39,14 +39,18 @@ if (tombolBuka) {
             musikLatar.play().catch(() => {});
         }
 
-        layarPembuka.style.transform = 'translateY(-100%)';
-        layarPembuka.style.opacity = '0';
-        layarPembuka.style.transition = 'all 1s ease';
+        if (layarPembuka) {
+            layarPembuka.style.transform = 'translateY(-100%)';
+            layarPembuka.style.opacity = '0';
+            layarPembuka.style.transition = 'all 1s ease';
+        }
 
         setTimeout(() => {
-            layarPembuka.style.display = 'none';
-            isiUndangan.classList.remove('sembunyi');
-            document.body.classList.remove('kunci-scroll');
+            if (layarPembuka) layarPembuka.style.display = 'none';
+            if (isiUndangan) {
+                isiUndangan.classList.remove('sembunyi');
+                document.body.classList.remove('kunci-scroll');
+            }
             initScrollAnimation();
         }, 1000);
     });
@@ -62,23 +66,15 @@ setInterval(() => {
     const distance = targetDate - now;
 
     if (distance > 0) {
-        document.getElementById("hari").innerText =
-            Math.floor(distance / (1000 * 60 * 60 * 24))
-            .toString().padStart(2, '0');
+        const elHari = document.getElementById("hari");
+        const elJam = document.getElementById("jam");
+        const elMenit = document.getElementById("menit");
+        const elDetik = document.getElementById("detik");
 
-        document.getElementById("jam").innerText =
-            Math.floor((distance % (1000 * 60 * 60 * 24)) /
-            (1000 * 60 * 60))
-            .toString().padStart(2, '0');
-
-        document.getElementById("menit").innerText =
-            Math.floor((distance % (1000 * 60 * 60)) /
-            (1000 * 60))
-            .toString().padStart(2, '0');
-
-        document.getElementById("detik").innerText =
-            Math.floor((distance % (1000 * 60)) / 1000)
-            .toString().padStart(2, '0');
+        if (elHari) elHari.innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+        if (elJam) elJam.innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+        if (elMenit) elMenit.innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+        if (elDetik) elDetik.innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
     }
 }, 1000);
 
@@ -112,11 +108,10 @@ function initScrollAnimation() {
     const fotoObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if(entry.isIntersecting){
-
                 fotoItems.forEach((foto, index) => {
                     setTimeout(() => {
                         foto.classList.add('show');
-                    }, index * 250); // muncul satu satu
+                    }, index * 250);
                 });
 
                 fotoObserver.unobserve(entry.target);
@@ -134,7 +129,7 @@ function initScrollAnimation() {
 
 // auto start kalau undangan udah kebuka
 window.addEventListener('load', () => {
-    if (!isiUndangan.classList.contains('sembunyi')) {
+    if (isiUndangan && !isiUndangan.classList.contains('sembunyi')) {
         initScrollAnimation();
     }
 });
@@ -169,11 +164,9 @@ if (form && btnKirim) {
 
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
-                // Pas sukses, langsung ubah teks jadi TERKIRIM
                 btnKirim.innerText = 'TERKIRIM';
                 form.reset();
 
-                // Tunggu 2 detik (2000 ms), baru balikin tombol ke semula
                 setTimeout(() => {
                     btnKirim.innerText = 'KIRIM KONFIRMASI';
                     btnKirim.disabled = false;
