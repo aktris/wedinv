@@ -17,6 +17,20 @@ const isiUndangan = document.getElementById('isi-undangan');
 const musikLatar = document.getElementById('musik-latar');
 
 // ==============================
+// AMBIL NAMA TAMU DARI URL
+// ==============================
+const urlParams = new URLSearchParams(window.location.search);
+const namaTamu = urlParams.get('to');
+
+// Pastiin ID 'nama-tamu' sesuai sama yang ada di tag HTML kamu
+const tempatNama = document.getElementById('nama-tamu');
+
+if (tempatNama) {
+    // Kalau ?to= kosong, bakal nampilin 'Tamu Undangan'
+    tempatNama.innerText = namaTamu ? namaTamu : 'Tamu Undangan';
+}
+
+// ==============================
 // BUKA UNDANGAN
 // ==============================
 if (tombolBuka) {
