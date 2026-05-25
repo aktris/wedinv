@@ -1,4 +1,4 @@
-// --- URL GOOGLE SCRIPT (Ganti dengan URL Web App dari akun baru kamu) ---
+// --- URL GOOGLE SCRIPT ---
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwJnx4osfo-n8K1e6qeVmZhkAucHYF18J1FNpmswJOij6-U_sLATx741StzCk892iEsyw/exec';
 
 // ==============================
@@ -17,17 +17,20 @@ const isiUndangan = document.getElementById('isi-undangan');
 const musikLatar = document.getElementById('musik-latar');
 
 // ==============================
-// AMBIL NAMA TAMU DARI URL (DI-UPDATE)
+// AMBIL NAMA TAMU DARI URL (FIX BUGS)
 // ==============================
 const urlParams = new URLSearchParams(window.location.search);
 const namaTamu = urlParams.get('to');
-
-// ID disesuaikan menjadi 'nama-tamu-teks' agar cocok dengan HTML
-const tempatNama = document.getElementById('nama-tamu-teks');
+const tempatNama = document.getElementById('nama-tamu-teks'); // Sesuai ID di HTML lo
 
 if (tempatNama) {
-    // Kalau ?to= kosong, bakal nampilin 'Tamu Undangan'
-    tempatNama.innerText = namaTamu ? namaTamu : 'Tamu Undangan';
+    if (namaTamu) {
+        // Decode otomatis mengubah %20 jadi spasi asli, ditambah regex replace buat safety
+        let namaBersih = decodeURIComponent(namaTamu);
+        tempatNama.innerText = namaBersih.replace(/%20/g, ' ');
+    } else {
+        tempatNama.innerText = 'Tamu Undangan';
+    }
 }
 
 // ==============================
@@ -57,7 +60,7 @@ if (tombolBuka) {
 }
 
 // ==============================
-// COUNTDOWN
+// COUNTDOWN (SAFE VERSION)
 // ==============================
 const targetDate = new Date("June 1, 2026 07:30:00").getTime();
 
@@ -113,7 +116,6 @@ function initScrollAnimation() {
                         foto.classList.add('show');
                     }, index * 250);
                 });
-
                 fotoObserver.unobserve(entry.target);
             }
         });
@@ -127,7 +129,7 @@ function initScrollAnimation() {
     }
 }
 
-// auto start kalau undangan udah kebuka
+// Auto start kalau undangan udah kebuka
 window.addEventListener('load', () => {
     if (isiUndangan && !isiUndangan.classList.contains('sembunyi')) {
         initScrollAnimation();
@@ -151,7 +153,7 @@ function salinTeks(teks, tombol) {
 }
 
 // ==============================
-// LOGIKA PENGIRIMAN RSVP (NEW)
+// LOGIKA PENGIRIMAN RSVP
 // ==============================
 const form = document.forms['submit-ke-google-sheet'];
 const btnKirim = document.getElementById('tombol-kirim');
