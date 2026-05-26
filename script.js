@@ -1,5 +1,5 @@
 // --- URL GOOGLE SCRIPT ---
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwJnx4osfo-n8K1e6qeVmZhkAucHYF18J1FNpmswJOij6-U_sLATx741StzCk892iEsyw/exec';
+const scriptURL = '/api/rsvp';
 
 // ==============================
 // AOS INIT
