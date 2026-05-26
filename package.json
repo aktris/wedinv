@@ -1,0 +1,23 @@
+{
+  "name": "wedding-invitation-anjeli-rafi",
+  "version": "1.0.0",
+  "description": "Wedding invitation website for Anjeli & Rafi",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aktris/wedinv.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aktris/wedinv/issues"
+  },
+  "homepage": "https://github.com/aktris/wedinv#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
